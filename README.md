@@ -20,7 +20,7 @@ Contains three nodes:
 ### line_follower_bot
 Contains URDF/Xacro files for the robot:
 - `base.xacro` — robot chassis, links and joints
-- `camera.xacro` — downward-facing camera sensor and Gazebo plugin
+- `camera.xacro` — front-facing camera sensor and Gazebo plugin
 - `lidar.xacro` — 2D LiDAR sensor and Gazebo plugin
 - `properties.xacro` — all dimensions and physical properties
 
@@ -41,7 +41,7 @@ Contains:
 ## How it Works
 
 ### Line Following
-1. Camera captures image of track below
+1. Camera captures image of track 
 2. Image converted to grayscale and thresholded to isolate black line
 3. Centroid calculated via image moments
 4. Error = centroid x - image center (320px)
