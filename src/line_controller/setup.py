@@ -26,6 +26,9 @@ setup(
         'console_scripts': [
             'line_detection = line_controller.line_detection:main',
             'line_guide = line_controller.line_guide:main',
+            'obstacle_avoidance = line_controller.obstacle_avoidance:main',
+            'decision_making = line_controller.decision_making:main',
+            'obstacle_line_detection = line_controller.obstacle_line_detection:main',
         ],
     },
 )

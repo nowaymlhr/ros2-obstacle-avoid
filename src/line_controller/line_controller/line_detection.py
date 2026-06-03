@@ -17,7 +17,7 @@ class LineDetectionNode(Node): # MODIFY NAME
         self.publisher_ = self.create_publisher(Float64, '/track_detection', 10) #For publishing the track detection results
         self.bridge = CvBridge() #For converting ROS images to OpenCV format
         self.start = self.get_parameter('start').value
-        self.image_width = 640
+        self.image_width = 840
         self.last_error = 0.0
 
         self.add_post_set_parameters_callback(self.parameter_update_callback)
