@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="obstacle_avoidance" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <xacro:include filename="properties.xacro" />
+    <xacro:include filename="base.xacro" />
+    <xacro:include filename="base_gazebo.xacro" />
+    <xacro:include filename="camera_sensor_obstacle.xacro" />
+    <xacro:include filename="lidar_sensor.xacro" />
+</robot>
