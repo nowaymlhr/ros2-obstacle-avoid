@@ -1,0 +1,37 @@
+<launch>
+    <let name="urdf_path"
+            value="$(find-pkg-share line_follower_bot)/urdf/obstacle_avoidance.urdf.xacro" />
+
+    <let name="bridge_path"
+            value="$(find-pkg-share my_robot_bringup)/config/obstacle_detection.yaml" />
+
+
+    <!-- Initializing robot -->
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <!-- Spawning robot in gazebo -->
+
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="$(find-pkg-share my_robot_bringup)/worlds/obstacle_world.sdf -r" />
+    </include>
+
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description -x 5.0 -y 0.0 -z 0.05" />
+
+    <node pkg="ros_gz_bridge" exec="parameter_bridge">
+        <param name="config_file" value="$(var bridge_path)" />
+    </node>
+
+    <node pkg="rviz2" exec="rviz2" output="screen"  />
+
+    <node pkg="line_controller" exec="obstacle_line_detection" />
+
+    <node pkg="line_controller" exec="decision_making" >
+        <param name="start" value="False" />
+    </node>
+
+
+
+</launch>
