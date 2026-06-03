@@ -4,7 +4,7 @@
 A vision and LiDAR-based robot that follows a black track while simultaneously detecting and avoiding obstacles in its path. Built in Gazebo Harmonic using ROS2 Jazzy.
 
 ## Demo
-[Watch Demo]([https://youtube.com/your_link](https://youtu.be/stDQCfnTQoE))
+[Watch Demo](https://youtu.be/stDQCfnTQoE)
 
 ## What's New vs Line Follower v1
 The previous project only followed a line using a camera sensor. This version adds a 2D LiDAR sensor for real-time obstacle detection, and a decision-making node that switches between line following and obstacle avoidance behaviors using a state machine.
